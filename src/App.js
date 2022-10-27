@@ -12,6 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import CarCreate from './components/CarCreate'
+import CarIndex from './components/CarIndex'
+import CarShow from './components/CarShow'
 
 const App = () => {
 
@@ -66,6 +69,27 @@ const App = () => {
             element={
               <RequireAuth user={user}>
                 <ChangePassword msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		  <Route
+            path='/create'
+            element={
+              <RequireAuth user={user}>
+                <CarCreate msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+			<Route
+            path='/cars'
+            element={
+              <RequireAuth user={user}>
+                <CarIndex msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+			<Route
+            path='/cars/:id'
+            element={
+              <RequireAuth user={user}>
+                <CarShow msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
 				</Routes>

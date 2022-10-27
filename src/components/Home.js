@@ -1,10 +1,16 @@
-const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
+import React from "react"
+import { Navigate } from "react-router-dom"
+
+const Home = ({ user }) => {
+	if (user) {
+		return (
+			<Navigate to ='/cars'/>
+		)
+	}
 
 	return (
 		<>
-			<h2>Home Page</h2>
+			<h2>I LOVE CARS!!!!</h2>
 		</>
 	)
 }

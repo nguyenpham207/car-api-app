@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
+
 const linkStyle = {
     color: 'white',
     textDecoration: 'none'
@@ -16,6 +17,16 @@ const authenticatedOptions = (
 		<Nav.Item>
 			<Link to='sign-out' style={linkStyle}>
 				Sign Out
+			</Link>
+		</Nav.Item>
+		<Nav.Item>
+			<Link to='create' style={linkStyle}>
+				Create a Car
+			</Link>
+		</Nav.Item>
+		<Nav.Item>
+			<Link to='cars' style={linkStyle}>
+				Index all cars
 			</Link>
 		</Nav.Item>
 	</>
@@ -46,7 +57,7 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-                react-auth-template
+                Cars Show
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
